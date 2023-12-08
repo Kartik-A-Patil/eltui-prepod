@@ -1,0 +1,194 @@
+.editor-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 80px;
+    justify-content: space-between;
+    height: auto;
+}
+
+.editor-card {
+    width: auto;
+    height: 800px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.editor-container button:hover {
+    opacity: 0.9;
+}
+
+/*browser*/
+.browser {
+    display: flex;
+    flex-direction: column;
+}
+
+.browser-card {
+    width: 500px;
+    background: lightgrey;
+    overflow: hidden;
+    display: flex;
+    border-radius: 5px 5px 0 0;
+}
+
+.browser-circles,
+.browser-header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.browser-circles {
+    width: 19%;
+    gap: 10px;
+    padding: 20px 21px;
+}
+
+.c {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 5px rgba(235, 235, 235, 0.356);
+}
+
+.c:first-child {
+    background-color: red;
+}
+
+.c:nth-child(2) {
+    background-color: rgb(204, 167, 4);
+}
+
+.c:last-child {
+    background-color: green;
+}
+
+.browser-header {
+    width: 80%;
+    padding: 20px 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.chevrons {
+    display: flex;
+}
+
+.search-bar {
+    position: relative;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: rgb(88, 88, 88);
+    box-shadow: inset 2px 2px 2px #05050525;
+}
+
+.search-bar svg {
+    position: absolute;
+    left: 10px;
+}
+
+.browserContent {
+    height: 100%;
+    width: 100%;
+}
+
+.browserPrevieew {
+    height: 500px;
+    width: 500px;
+    background-color: #cdcdcd;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/*modal*/
+.modal-body button {
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    margin: 5px;
+}
+
+.modal-body button:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 20px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+
+  }
+  
+  .switch-label {
+    position: absolute;
+    width: 46px;
+    height: 24.5px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+  
+  .checkbox {
+    position: absolute;
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .checkbox:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 19px;
+    border-radius: 50%;
+    box-shadow: inset 10px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.3s;
+}
+  
+  .checkbox:checked ~ .slider::before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  

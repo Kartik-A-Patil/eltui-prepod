@@ -1,0 +1,504 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.navbar {
+  padding-top: 15px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  border: none;
+  background: none;
+}
+
+.nav-link span {
+  padding-bottom: 7px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navbar-brand {
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  margin: 0 70px;
+}
+
+.navbar-brand {
+  --border-right: 2px;
+  --text-stroke-color: rgb(255, 255, 255);
+  --animation-color: #8800ff;
+  --fs-size: 28px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 0.5px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.navbar-brand:hover .hover-text {
+  width: 100%;
+}
+
+.navbar-toggler-icon {
+  background-image: url('../img/menu.png') !important;
+}
+
+.offcanvas.offcanvas-end {
+  width: 250px !important;
+}
+
+/*alert*/
+div.alert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  z-index: 10;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.offcanvas {
+  background-color: #111;
+}
+
+.modal-content {
+  width: 90%;
+  color: #fff;
+  background-color: #1d1d1d;
+  margin: auto;
+}
+
+/*showcase*/
+#showcase {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+.showbox {
+  background-color: transparent;
+  border: 1px solid #3737370e;
+  box-shadow: 0px 0px 3px #67676737;
+  border-radius: 10px;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  top: 190px;
+  left: 10%;
+
+}
+
+.box2 {
+  top: -10px;
+  left: 50%;
+  width: 220px;
+}
+
+.box3 {
+  top: 300px;
+  right: 10%;
+}
+
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #3e00002b;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #7a00006b;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(110, 110, 110, 0.312);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #cacaca;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+.btn-close {
+  --bs-btn-close-bg: url('../img/close.svg');
+}
+
+.animation {
+  color: rgba(123, 123, 123, 0.548);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 40px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #5d00ffa2;
+  animation: spin_4991 6s infinite;
+}
+
+p.username {
+  font-weight: 300;
+  text-transform: capitalize;
+  margin: auto;
+}
+
+@keyframes spin_4991 {
+  10% {
+    -webkit-transform: translateY(-105%);
+    transform: translateY(-105%);
+  }
+
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  35% {
+    -webkit-transform: translateY(-205%);
+    transform: translateY(-205%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  60% {
+    -webkit-transform: translateY(-305%);
+    transform: translateY(-305%);
+  }
+
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  85% {
+    -webkit-transform: translateY(-405%);
+    transform: translateY(-405%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%);
+  }
+}
+
+
+.browse-username {
+  text-transform: capitalize;
+  color: #fff;
+
+}
+
+/*borwse button*/
+.browse-btn {
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-radius: 9px;
+  background: #d5f365;
+  border: none;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+  color: #000000;
+}
+
+.browse-btn:hover {
+  box-shadow: 7px 5px 56px -14px #C3D900;
+}
+
+.browse-btn:active {
+  transform: scale(0.97);
+  box-shadow: 7px 5px 56px -10px #C3D900;
+}
+
+/*showcase browse by category*/
+.comp-card {
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.text-body {
+  color: rgb(134, 134, 134);
+}
+
+.text-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.comp-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.comp-card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+.profile {
+  padding: 2px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+img.profilepic{
+  transition: all 0.2s;
+}
+.profile:hover img.profilepic{
+  filter: brightness(0.6) saturate(30%);
+}
+.profile img{
+  height: 100px;
+  border-radius: 50%;
+}
+.icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.icon-overlay img{
+  height: 40px;
+}
+
+img.securelogo {
+  height: 80px;
+}
+/*media Queries*/
+@media only screen and (max-width: 992px) {
+  .navbar-brand {
+    margin: 0px 10px;
+  }
+#showcase{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.showcase-container{
+  margin-bottom: 20px;
+}
+.headline{
+margin-bottom: 50px;
+}
+  .nav-link {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .nav-pills {
+    display: none;
+  }
+
+  .cards {
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  .header {
+    position: static !important;
+    margin: 0 !important;
+
+  }
+
+  .card {
+    width: 340px !important;
+    height: 260px !important;
+  }
+
+  .sidenavbar {
+    display: none;
+  }
+
+
+  .offcanvas-body {
+    flex-grow: 1;
+    padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+  }
+
+  .box3 {
+    display: none;
+  }
+
+  .box1 {
+    top: 216px;
+    left: -8%;
+  }
+
+  .box2 {
+    display: none;
+  }
+}
